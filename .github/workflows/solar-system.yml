@@ -91,6 +91,9 @@ jobs:
             username: ${{ vars.DOCKERHUB_USERNAME }}
             password: ${{ secrets.DOCKERHUB_TOKEN }}
             
+        - name: Checkout Repository
+          uses: actions/checkout@v4    
+            
         - name: docker build the image 
           uses: docker/build-push-action@v6    
           with:
@@ -107,6 +110,7 @@ jobs:
             push: true
             tags: ${{ vars.DOCKERHUB_USERNAME }}/app:v1    
                    
+
 
 
 
