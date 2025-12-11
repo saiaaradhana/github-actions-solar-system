@@ -95,6 +95,7 @@ jobs:
           uses: docker/build-push-action@v6    
           with:
             context: .
+            file: ./Dockerfile
             push: false 
             tags: ${{ vars.DOCKERHUB_USERNAME }}/app:v1
 
@@ -102,9 +103,11 @@ jobs:
           uses: docker/build-push-action@v6    
           with:
             context: .
+            file: ./Dockerfile
             push: true
             tags: ${{ vars.DOCKERHUB_USERNAME }}/app:v1    
                    
+
 
 
 
